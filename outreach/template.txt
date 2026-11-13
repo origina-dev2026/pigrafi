@@ -1,0 +1,16 @@
+Oggetto: {{name}} — invito a pubblicare i manifesti su Pigrafi
+
+Gentile referente di {{name}},
+
+ci occupiamo di Pigrafi, un servizio gratuito che raccoglie i manifesti funebri pubblicati dalle agenzie e li rende consultabili alle famiglie per città, con ricerca per cognome.
+
+Vi scriviamo perché il vostro sito pubblica i necrologi ({{necrologi_url}}) e vorremmo chiedervi l'autorizzazione a riportarli nel servizio, sempre con il vostro nome e il link alla vostra pagina.
+
+Per aderire basta compilare il modulo (circa 3 minuti):
+{{form_url}}
+
+Nel modulo trovate il testo dell'autorizzazione. Potete revocarla in qualsiasi momento scrivendo a {{sender}}.
+
+Grazie per il tempo che ci dedicate.
+
+{{signature}}

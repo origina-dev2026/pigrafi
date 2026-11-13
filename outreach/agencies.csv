@@ -1,0 +1,11 @@
+name,city,region,website,email,necrologi_url,status,note
+Onoranze Funebri Celegon,Mirano,Veneto,https://www.celegon.net,,https://www.celegon.net/chi-ci-ha-lasciato-anniversari-mirano/,autorizzata-da-verificare-per-iscritto,già nell'app
+Athena Onoranze Funebri,Torino,Piemonte,https://athenaonoranzefunebri.com,,https://athenaonoranzefunebri.com/necrologi/,da-contattare,già nell'app (senza permesso scritto: da confermare)
+Lucarda Imprese Funebri,Mestre,Veneto,https://servizilucarda.com,,https://servizilucarda.com/necrologi,da-contattare,già nell'app (senza permesso scritto: da confermare)
+Duemila Onoranze Funebri,Torino,Piemonte,,,,da-cercare-sito,trovata in directory Virgilio
+Audisio Onoranze Funebri,Torino,Piemonte,,,,da-cercare-sito,trovata in directory Virgilio
+La Cuneese Onoranze Funebri,Cuneo,Piemonte,,,,da-cercare-sito,trovata in directory Virgilio
+Onoranze Cardinal Massaia,Asti,Piemonte,,,,da-cercare-sito,trovata in directory Virgilio
+Fabozzi Onoranze Funebri,Roma,Lazio,https://www.fabozzi.it,,https://www.fabozzi.it/necrologi/,da-contattare,blocca lo scraper: contatto diretto
+Onoranze Funebri Ottani,Bologna,Emilia-Romagna,https://www.onoranzefunebriottani.com,,https://www.onoranzefunebriottani.com/servizi/necrologi-e-manifesti-funebri/,da-contattare,robots.txt vieta /wp-content/
+AROF Onoranze Funebri,Perugia,Umbria,https://arofonoranzefunebri.it,,https://arofonoranzefunebri.it/necrologi/,da-contattare,
