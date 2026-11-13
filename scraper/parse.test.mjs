@@ -84,3 +84,14 @@ test('fonti registrate: solo quelle configurate e nuove', () => {
   assert.equal(out.length, 2);
   assert.equal(out[1].url, 'https://b.it/necro');
 });
+
+import { autoDetect } from './auto.mjs';
+
+test('rilevamento card: gruppo ripetuto con immagine e nome', () => {
+  const html = `<div class="list">${[1, 2, 3, 4].map((i) => `<article class="card"><img src="/img/${i}.jpg"><h3>Nome ${i}</h3><p>Funerale 1${i} novembre 2026</p></article>`).join('')}</div><footer><a href="/">x</a></footer>`;
+  const r = autoDetect(html, 'https://ex.it/necro/');
+  assert.equal(r.ok, true);
+  assert.equal(r.items.length, 4);
+  assert.equal(r.items[0].name, 'Nome 1');
+  assert.equal(r.items[0].imageUrl, 'https://ex.it/img/1.jpg');
+});

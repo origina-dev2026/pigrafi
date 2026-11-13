@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
+import { autoDetect } from './auto.mjs';
 
 const SELF = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(SELF), '..');
@@ -303,9 +304,30 @@ async function scrapeSvelteKit(agency, todayIso) {
 }
 
 async function scrapeAgency(agency, todayIso, byId) {
-  const items = agency.mode === 'sveltekit'
-    ? await scrapeSvelteKit(agency, todayIso)
-    : extractItems(cheerio.load(await getText(agency.url)), agency, todayIso);
+  let items;
+  if (agency.mode === 'sveltekit') {
+    items = await scrapeSvelteKit(agency, todayIso);
+  } else if (agency.mode === 'auto') {
+    // rilevamento automatico delle card (nessun selettore scritto a mano)
+    const html = await getText(agency.url);
+    const det = autoDetect(html, agency.url);
+    if (!det.ok) throw new Error(`rilevamento non riuscito: ${det.reason}`);
+    items = det.items.map((c) => ({
+      id: sha(agency.url + c.imageUrl).slice(0, 16),
+      city: agency.city,
+      agency: agency.name,
+      agencyUrl: agency.url,
+      surname: c.name.toUpperCase(),
+      title: c.name,
+      type: classifyType(c.name, c.text),
+      date: parseEventDate(c.text),
+      imageUrl: c.imageUrl,
+      sourceUrl: agency.url,
+      lastSeen: todayIso
+    }));
+  } else {
+    items = extractItems(cheerio.load(await getText(agency.url)), agency, todayIso);
+  }
 
   for (const it of items) {
     // scarica le immagini in locale (l'app non dipende dai server delle agenzie)
