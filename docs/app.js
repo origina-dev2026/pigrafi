@@ -3,7 +3,7 @@ const CITY_KEY = 'pigrafi:city';
 const CONSENT_KEY = 'pigrafi:ads-consent'; // 'accepted' | 'rejected'
 
 // Google AdSense: sostituire con i propri ID (vedi README). Finché sono i placeholder, niente annunci.
-const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX';
+const ADSENSE_CLIENT = 'ca-pub-2414957329781059';
 const ADSENSE_SLOT = 'XXXXXXXXXX';
 const AD_EVERY = 6; // uno slot banner ogni N pigrafi
 
