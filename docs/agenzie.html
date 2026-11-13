@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrazione agenzia · Pigrafi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .wrap { max-width: 640px; margin: 0 auto; padding: 20px 18px 40px; }
+    .wrap h1 { color: var(--navy); font-size: 26px; }
+    form { display: grid; gap: 12px; margin-top: 18px; }
+    form label { display: grid; gap: 4px; font-size: 14px; color: var(--text); }
+    form input, form textarea { font: inherit; font-size: 16px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--text); }
+    .check { display: flex !important; gap: 10px; align-items: flex-start; font-size: 14px; }
+    .check input { width: auto; margin-top: 3px; }
+    .auth { background: var(--gold-soft); border-radius: 12px; padding: 14px; font-size: 14px; line-height: 1.5; color: var(--text); }
+    button { font: inherit; font-weight: 600; padding: 13px; border-radius: 12px; border: 0; background: var(--navy); color: #fff; cursor: pointer; }
+    button:disabled { opacity: .6; }
+    .msg { font-size: 15px; padding: 12px; border-radius: 10px; }
+    .msg.ok { background: #e6f4ea; color: #1e5b2b; }
+    .msg.err { background: #fbe9e7; color: #8a1c10; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Registra la tua agenzia</h1>
+    <p>Pigrafi mostra i manifesti funebri pubblicati dalle agenzie, per città, a disposizione delle famiglie. La registrazione è gratuita: ogni agenzia decide quali manifesti rendere visibili.</p>
+
+    <form id="reg" novalidate>
+      <label>Nome dell'agenzia *<input name="name" required maxlength="120"></label>
+      <label>Referente *<input name="contact_name" required maxlength="120"></label>
+      <label>Email *<input name="email" type="email" required maxlength="254"></label>
+      <label>Telefono<input name="phone" maxlength="40"></label>
+      <label>Città *<input name="city" required maxlength="80"></label>
+      <label>Sito web<input name="website" type="url" maxlength="300" placeholder="https://"></label>
+      <label>Link alla pagina dove pubblicate i necrologi *<input name="necrologi_url" type="url" required maxlength="300" placeholder="https://"></label>
+
+      <div class="auth">
+        <strong>Autorizzazione alla pubblicazione (v. 2026-11-v1)</strong>
+        <p>Autorizzo Pigrafi a riprodurre nell'app e nel sito i manifesti funebri pubblicati dalla mia agenzia sulla pagina indicata, indicando la fonte (nome dell'agenzia e link alla pagina). Posso revocare l'autorizzazione in qualsiasi momento scrivendo a segreteria@majime.it.</p>
+        <label class="check"><input type="checkbox" name="authorization" required> Confermo di avere il diritto di autorizzare la pubblicazione.</label>
+      </div>
+
+      <label class="check"><input type="checkbox" name="privacy" required> Ho letto la <a href="privacy.html">privacy policy</a>.</label>
+
+      <button type="submit" id="send">Invia registrazione</button>
+      <p id="msg" class="msg" hidden></p>
+    </form>
+  </div>
+
+  <script type="module">
+    // URL del Worker di registrazione (vedi worker/README)
+    const REGISTER_URL = 'https://pigrafi-registrazione.DA-COMPILARE.workers.dev/register';
+    const form = document.getElementById('reg');
+    const msg = document.getElementById('msg');
+    const btn = document.getElementById('send');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const body = Object.fromEntries(fd.entries());
+      body.authorization = fd.get('authorization') === 'on';
+      if (!body.authorization || fd.get('privacy') !== 'on') {
+        show('Per continuare servono autorizzazione e presa visione della privacy.', false);
+        return;
+      }
+      btn.disabled = true;
+      try {
+        const res = await fetch(REGISTER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          form.reset();
+          show('Grazie: registrazione ricevuta. Ti contatteremo a breve.', true);
+        } else {
+          show((data.errors || ['Errore, riprova più tardi']).join(' · '), false);
+        }
+      } catch {
+        show('Connessione non riuscita, riprova più tardi.', false);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    function show(text, ok) {
+      msg.textContent = text;
+      msg.className = 'msg ' + (ok ? 'ok' : 'err');
+      msg.hidden = false;
+    }
+  </script>
+</body>
+</html>

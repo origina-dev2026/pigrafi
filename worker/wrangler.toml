@@ -1,0 +1,12 @@
+name = "pigrafi-registrazione"
+main = "index.mjs"
+compatibility_date = "2026-11-01"
+
+# Crea il database gratuito (una volta):
+#   npx wrangler d1 create pigrafi
+# poi copia il database_id qui sotto e applica lo schema:
+#   npx wrangler d1 execute pigrafi --remote --file=schema.sql
+[[d1_databases]]
+binding = "DB"
+database_name = "pigrafi"
+database_id = "DA_COMPILARE"
