@@ -254,3 +254,50 @@ main {
   .foot a { color: var(--gold); }
   .card.past .kind { background: #2d3644; color: #b8c0cc; }
 }
+
+/* ingrandimento manifesto */
+.zoomable { cursor: zoom-in; }
+.viewer {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(96vw, 900px);
+  max-height: 94vh;
+}
+.viewer::backdrop { background: rgba(10, 16, 24, .82); }
+.viewer img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+  background: #fff;
+}
+.viewer-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, .92);
+  color: var(--navy);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.map-link {
+  justify-self: start;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.map-link:hover { filter: brightness(1.05); }

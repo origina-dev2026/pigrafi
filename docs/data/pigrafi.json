@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": "2026-11-13T21:02:48.252Z",
+    "updatedAt": "2026-11-13T21:08:52.818Z",
     "cities": [
       "Asti",
       "Collegno",
@@ -49,7 +49,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/b84fc1274c6fb4fd566b50e6e424175a26e1a7a5.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "815707ef0cc61e7a",
@@ -65,7 +66,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/69a7658b9a8f8ac6913299d4e08967e2ae0e0662.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "Duomo San Michele Arcangelo di Mirano"
     },
     {
       "id": "b0caaddb868c0128",
@@ -81,7 +83,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/92a58c3c66b561245f21b213fe1847196e9fb1d8.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "c836e1c451286d49",
@@ -97,7 +100,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/7db5a426ce6dc11a08f60ce77446a09724285812.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "4e5519a3ccf8995f",
@@ -113,7 +117,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/3ef5e27f57728af80ecd0c9abcd3c8463c80f0e6.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "edaa59112cce6c75",
@@ -129,7 +134,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/bf6eba77be1dff9a16bb2fafdfe6874b909003c6.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "Duomo San Michele Arcangelo di Mirano"
     },
     {
       "id": "bb17aee6ee0dcc32",
@@ -171,7 +177,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/244d4f8049b33e893b488c0d61b2333e4fd3872c.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "11fc055eac170bb4",
@@ -200,7 +207,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/d8a40807eac29fe54e6b1e5d9b093a7aa383dd9b.jpg",
       "ocrDone": true,
-      "place": "Mira"
+      "place": "Mira",
+      "venue": null
     },
     {
       "id": "9105f1420eacbec9",
@@ -333,7 +341,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/39d1d6a411fa793cdd79e1b29a8d00620da65848.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "8eb78f740db99aa9",
@@ -349,7 +358,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/8909e53c6a74278061ff5a01fd324c0842430bce.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "7ddd0103e1a37ce7",
@@ -417,7 +427,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/d452b66021bb943b33f419113af12118cb32eb18.jpg",
       "ocrDone": true,
-      "place": "Martellago"
+      "place": "Martellago",
+      "venue": null
     },
     {
       "id": "f4e68fb8670af7c1",
@@ -472,7 +483,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/478e9fc953c6a66263b2a71dd5e03d4498073c64.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "chiesa Arcipretale di Vetrego di Mirano"
     },
     {
       "id": "7aedebea52a001b3",
@@ -527,7 +539,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/915bababc7b71523c8060d4c38d7a58758680efd.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "dc15fa72055d6206",
@@ -543,7 +556,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/0e4681adfc7d062f2b0424ee9e45a0ac6b7cde1d.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "Duomo San Michele Arcangelo di Mirano"
     },
     {
       "id": "49a537f11b56c436",
@@ -572,7 +586,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/b0fc3ed9e4461c699773f1e41fb4e07cdc17cd5c.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": "Chiesa Parrocchiale SS"
     },
     {
       "id": "e0527f27f4b3d522",
@@ -601,7 +616,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/6333ea9c31b0052e9cc75e9c7ba6a9aad220339b.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": "Chiesa Parrocchiale SS"
     },
     {
       "id": "b305fbe9ee58351e",
@@ -617,7 +633,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/aa749c686d6cbfd82d244e41e7698206aa31ae4e.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "Chiesa Arcipretale di Scaltenigo"
     },
     {
       "id": "8e3d7cf6712d7bec",
@@ -633,7 +650,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/dd92e086b04d13b52d3f0d6e11f4c7fa0d0ea5b1.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": null
     },
     {
       "id": "8790b4eefd0f89a7",
@@ -649,7 +667,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/a42f145d9b239cdd00e1cd73d18b61107abad02d.jpg",
       "ocrDone": true,
-      "place": "Dolo"
+      "place": "Dolo",
+      "venue": null
     },
     {
       "id": "858eadfc4c216036",
@@ -665,7 +684,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/5ec4037e6e77d6b748406a59fe2d7dd24fd8d771.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "9e7711b785ab9939",
@@ -681,7 +701,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/44d9b07447998393f801c8491c7303d4cb8b23d3.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "chiesa San Leopoldo Mandic’ di Mirano"
     },
     {
       "id": "1fb53c2f5b984256",
@@ -697,7 +718,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/6b1e969aba349979031dc8da504dd2e9b64d5694.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": null
     },
     {
       "id": "64d74a82ba544d52",
@@ -713,7 +735,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/d95f501c7fe057ac1772a2835b8236495b17e428.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     },
     {
       "id": "c27404e4c605f062",
@@ -729,7 +752,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/3e2d3a8ea0416820065e7db40eba819523574706.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": null
     },
     {
       "id": "f97ccdc374806cf0",
@@ -745,7 +769,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/bb2fe1fe7672a3a4b42005d72e7e120cc22dce84.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": null
     },
     {
       "id": "ff2cd1751427d718",
@@ -761,7 +786,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/d8f749029959c26c64f709b963f5c1c5b2db8069.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": null
     },
     {
       "id": "2d696b652dbb1b90",
@@ -777,7 +803,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/1a01a806c496cf95903be246e59dd86fc5a7e131.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": "chiesa Pieve di Santa Maria Maggiore Dardago"
     },
     {
       "id": "e220e0af81c4580a",
@@ -793,7 +820,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/8e53c00b0c6aa00fc7d25459ca4481c91ac86c3c.jpg",
       "ocrDone": true,
-      "place": "Mestre"
+      "place": "Mestre",
+      "venue": "Chiesa Parrocchiale Sant’Andrea {Via Altinia) di Favaro V"
     },
     {
       "id": "0553c855583b0921",
@@ -809,7 +837,8 @@
       "lastSeen": "2026-11-13",
       "image": "data/images/33ae8844253c99436ef690c035b75342e24c72e4.jpg",
       "ocrDone": true,
-      "place": "Mirano"
+      "place": "Mirano",
+      "venue": null
     }
   ]
 }

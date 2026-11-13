@@ -63,3 +63,10 @@ test('SvelteKit devalue: decodifica elenco defunti', () => {
   assert.equal(recs[0].nome, 'SILVANA');
   assert.equal(recs[0].id, 1557);
 });
+
+import { parseVenue } from './scrape.mjs';
+
+test('nome della chiesa per il link alla mappa', () => {
+  assert.equal(parseVenue("Martedì 17 Novembre 2026 alle ore 11,00 nella chiesa San Leopoldo Mandic' di Mirano. Dopo la cerimonia"), "chiesa San Leopoldo Mandic' di Mirano");
+  assert.equal(parseVenue('nessuna chiesa qui'), null);
+});

@@ -111,7 +111,7 @@ function render() {
     card.className = 'card' + (isPast ? ' past' : '');
     card.innerHTML = `
       <div class="photo">
-        <img loading="lazy" alt="Manifesto di ${escapeHtml(it.surname)}" src="${escapeHtml(it.image)}">
+        <img class="zoomable" loading="lazy" alt="Manifesto di ${escapeHtml(it.surname)}" src="${escapeHtml(it.image)}" title="Ingrandisci">
         <span class="date-chip${isToday ? ' today' : ''}">${escapeHtml(isPast ? 'Conclusa' : dateLabel(it.date, today))}</span>
       </div>
       <div class="info">
@@ -119,6 +119,7 @@ function render() {
         <h2>${escapeHtml(toTitle(it.surname))}</h2>
         <p class="place">${escapeHtml(it.city)}</p>
         <p class="agency">${escapeHtml(it.agency)}</p>
+        ${mapLink(it, isPast)}
       </div>`;
     $list.appendChild(card);
   });
@@ -127,6 +128,26 @@ function render() {
     $list.innerHTML = `<p class="empty">Nessun ${type === 'funerale' ? 'funerale' : 'anniversario'} trovato${city ? ` a ${escapeHtml(city)}` : ''}.</p>`;
   }
 }
+
+// link alla chiesa (solo per funerali non ancora svolti), apre Google Maps
+function mapLink(it, isPast) {
+  if (isPast) return '';
+  const q = it.venue || (it.place ? `${it.place}` : '');
+  if (!q) return '';
+  const query = encodeURIComponent(`${q}${it.venue ? '' : ''}`.trim());
+  return `<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" rel="noopener">Dove si svolge · apri la mappa ↗</a>`;
+}
+
+// visualizzazione ingrandita del manifesto
+const $viewer = document.getElementById('viewer');
+$list.addEventListener('click', (e) => {
+  const img = e.target.closest('img.zoomable');
+  if (!img) return;
+  $viewer.querySelector('img').src = img.src;
+  $viewer.querySelector('img').alt = img.alt;
+  $viewer.showModal();
+});
+$viewer.addEventListener('click', (e) => { if (e.target === $viewer || e.target.classList.contains('viewer-close')) $viewer.close(); });
 
 // "ROSSI MARIA" -> "Rossi Maria"
 function toTitle(s = '') {

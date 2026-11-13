@@ -81,6 +81,16 @@ export function parsePlace(text) {
   return m ? m[1].replace(/[’']$/, '').trim() : null;
 }
 
+// Nome della chiesa/luogo di cerimonia, come scritto nel manifesto (per il link alla mappa)
+// "nella chiesa San Leopoldo Mandic' di Mirano" -> "chiesa San Leopoldo Mandic' di Mirano"
+export function parseVenue(text) {
+  if (!text) return null;
+  const kw = '(?:[Cc]hiesa|[Pp]arrocchia|[Dd]uomo|[Ss]antuario|[Bb]asilica|[Cc]appella|[Cc]attedrale|[Pp]ieve|[Aa]bbazia)';
+  const m = text.match(new RegExp(kw + '\\s+[A-ZÀ-Ú][^.\\n]{1,90}?(?=\\s+(?:alle|ore|il|dopo|si|per)\\b|[.\\n,;]|\\s+\\d|$)', 'u'));
+  if (!m) return null;
+  return m[0].replace(/\s+/g, ' ').trim();
+}
+
 // Il pigrafe è un anniversario? (titolo, testo della scheda o testo OCR)
 export function classifyType(...parts) {
   return /anniversar/i.test(parts.filter(Boolean).join(' ')) ? 'anniversario' : 'funerale';
@@ -311,6 +321,7 @@ async function scrapeAgency(agency, todayIso, byId) {
         it.place = place;
         it.date = parseEventDate(text) || it.date;
         it.type = classifyType(it.title, text);
+        it.venue = parseVenue(text);
         it.city = place || it.city;
       } catch (err) {
         console.error(`  OCR fallito per ${it.surname}: ${err.message}`);
@@ -322,6 +333,7 @@ async function scrapeAgency(agency, todayIso, byId) {
       it.city = prev.place || it.city;
       it.date = prev.date || it.date;
       it.type = prev.type || it.type;
+      it.venue = prev.venue || null;
     }
   }
   return items;
