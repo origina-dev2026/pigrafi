@@ -4,26 +4,22 @@ const CONSENT_KEY = 'pigrafi:ads-consent'; // 'accepted' | 'rejected'
 
 // Google AdSense: sostituire con i propri ID (vedi README). Finché sono i placeholder, niente annunci.
 const ADSENSE_CLIENT = 'ca-pub-2414957329781059';
-const ADSENSE_SLOT = 'XXXXXXXXXX';
+const ADSENSE_SLOT = '5742781147';
 const AD_EVERY = 6; // uno slot banner ogni N pigrafi
 
 const $consent = document.getElementById('consent');
-const adsConfigured = !ADSENSE_CLIENT.includes('XXXX');
-let adsScriptLoaded = false;
+const adsConfigured = !ADSENSE_CLIENT.includes('XXXX') && !ADSENSE_SLOT.includes('XXXX');
 
+// Gli slot si mostrano sempre; con Consent Mode, senza consenso Google serve annunci non personalizzati.
 function adsAllowed() {
-  return adsConfigured && localStorage.getItem(CONSENT_KEY) === 'accepted';
+  return adsConfigured;
 }
 
-// Lo script Google viene caricato solo dopo il consenso.
-function loadAdsScript() {
-  if (adsScriptLoaded) return;
-  adsScriptLoaded = true;
-  const s = document.createElement('script');
-  s.async = true;
-  s.crossOrigin = 'anonymous';
-  s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
-  document.head.appendChild(s);
+// Aggiorna il consenso per Google (lo script AdSense è già nell'head, con consenso negato di default).
+function updateAdsConsent(granted) {
+  if (typeof gtag !== 'function') return;
+  const v = granted ? 'granted' : 'denied';
+  gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v });
 }
 
 function adSlot() {
@@ -42,16 +38,16 @@ function adSlot() {
 function setupConsent() {
   const choice = localStorage.getItem(CONSENT_KEY);
   if (!choice && adsConfigured) $consent.hidden = false;
-  if (choice === 'accepted' && adsConfigured) loadAdsScript();
   document.getElementById('consent-accept').addEventListener('click', () => {
     localStorage.setItem(CONSENT_KEY, 'accepted');
     $consent.hidden = true;
-    loadAdsScript();
+    updateAdsConsent(true);
     render();
   });
   document.getElementById('consent-reject').addEventListener('click', () => {
     localStorage.setItem(CONSENT_KEY, 'rejected');
     $consent.hidden = true;
+    updateAdsConsent(false);
     render();
   });
 }

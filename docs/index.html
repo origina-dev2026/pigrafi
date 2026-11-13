@@ -9,6 +9,19 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="stylesheet" href="style.css">
+  <!-- Google Consent Mode v2: di default nega cookie pubblicitari; si attiva solo dopo "Accetta" -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'
+    });
+    if (localStorage.getItem('pigrafi:ads-consent') === 'accepted') {
+      gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+    }
+  </script>
+  <!-- Google AdSense (snippet di verifica) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2414957329781059" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
