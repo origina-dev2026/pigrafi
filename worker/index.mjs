@@ -61,11 +61,11 @@ export default {
     try {
       await env.DB.prepare(
         `INSERT INTO agencies (name, contact_name, email, phone, city, website, necrologi_url,
-           authorization_accepted_at, authorization_text_version, ip_hash)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+           authorization_accepted_at, authorization_text_version, ip_hash, anniversari_url)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       ).bind(
         data.name, data.contact_name, data.email, data.phone, data.city, data.website, data.necrologi_url,
-        new Date().toISOString(), AUTH_TEXT_VERSION, ipHash
+        new Date().toISOString(), AUTH_TEXT_VERSION, ipHash, data.anniversari_url || null
       ).run();
     } catch (err) {
       if (String(err.message || err).includes('UNIQUE')) {

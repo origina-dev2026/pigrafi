@@ -9,4 +9,4 @@ compatibility_date = "2026-11-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "pigrafi"
-database_id = "DA_COMPILARE"
+database_id = "b02e2ef0-a62d-4e70-99e9-c29c1bccb6b0"

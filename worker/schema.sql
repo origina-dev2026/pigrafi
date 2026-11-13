@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS agencies (
   city TEXT NOT NULL,
   website TEXT,
   necrologi_url TEXT NOT NULL,
+  anniversari_url TEXT,
   authorization_accepted_at TEXT NOT NULL,
   authorization_text_version TEXT NOT NULL,
   ip_hash TEXT,

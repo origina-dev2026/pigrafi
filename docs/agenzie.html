@@ -34,6 +34,7 @@
       <label>Città *<input name="city" required maxlength="80"></label>
       <label>Sito web<input name="website" type="url" maxlength="300" placeholder="https://"></label>
       <label>Link alla pagina dove pubblicate i necrologi *<input name="necrologi_url" type="url" required maxlength="300" placeholder="https://"></label>
+      <label>Link alla pagina degli anniversari (se la avete)<input name="anniversari_url" type="url" maxlength="300" placeholder="https://"></label>
 
       <div class="auth">
         <strong>Autorizzazione alla pubblicazione (v. 2026-11-v1)</strong>
@@ -50,7 +51,7 @@
 
   <script type="module">
     // URL del Worker di registrazione (vedi worker/README)
-    const REGISTER_URL = 'https://pigrafi-registrazione.DA-COMPILARE.workers.dev/register';
+    const REGISTER_URL = 'https://pigrafi-registrazione.odd-sun-644f.workers.dev/register';
     const form = document.getElementById('reg');
     const msg = document.getElementById('msg');
     const btn = document.getElementById('send');
