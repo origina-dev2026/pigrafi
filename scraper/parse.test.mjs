@@ -70,3 +70,17 @@ test('nome della chiesa per il link alla mappa', () => {
   assert.equal(parseVenue("Martedì 17 Novembre 2026 alle ore 11,00 nella chiesa San Leopoldo Mandic' di Mirano. Dopo la cerimonia"), "chiesa San Leopoldo Mandic' di Mirano");
   assert.equal(parseVenue('nessuna chiesa qui'), null);
 });
+
+import { mergeSources } from './scrape.mjs';
+
+test('fonti registrate: solo quelle configurate e nuove', () => {
+  const fixed = [{ url: 'https://a.it/necro', item: '.x' }];
+  const reg = [
+    { url: 'https://a.it/necro', item: '.x' },
+    { url: 'https://b.it/necro', item: '.card' },
+    { url: 'https://c.it/necro' },
+  ];
+  const out = mergeSources(fixed, reg);
+  assert.equal(out.length, 2);
+  assert.equal(out[1].url, 'https://b.it/necro');
+});

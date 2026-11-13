@@ -13,3 +13,7 @@ CREATE TABLE IF NOT EXISTS agencies (
   ip_hash TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Configurazione di acquisizione (selettori) impostata dall'amministratore dopo aver verificato la pagina
+ALTER TABLE agencies ADD COLUMN scraper_config TEXT;
+ALTER TABLE agencies ADD COLUMN active INTEGER NOT NULL DEFAULT 0;

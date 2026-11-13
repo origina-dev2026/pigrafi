@@ -339,9 +339,30 @@ async function scrapeAgency(agency, todayIso, byId) {
   return items;
 }
 
+// Agenzie registrate dal form (Worker). Entrano nello scraper solo se hanno una configurazione verificata.
+export function mergeSources(fixed, registered) {
+  const urls = new Set(fixed.map((a) => a.url));
+  const extra = (registered || []).filter((a) => a && a.url && a.item && !urls.has(a.url));
+  return [...fixed, ...extra];
+}
+
+async function fetchRegistered() {
+  const url = process.env.SOURCES_URL;
+  const token = process.env.SOURCES_TOKEN;
+  if (!url || !token) return [];
+  const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+  if (!res.ok) throw new Error(`elenco agenzie registrate: HTTP ${res.status}`);
+  return (await res.json()).agencies || [];
+}
+
 async function main() {
   await mkdir(IMG_DIR, { recursive: true });
   const config = JSON.parse(await readFile(path.join(ROOT, 'sources.json'), 'utf8'));
+  try {
+    config.agencies = mergeSources(config.agencies, await fetchRegistered());
+  } catch (err) {
+    console.error(`Agenzie registrate non caricate: ${err.message}`);
+  }
   const today = new Date();
   const todayIso = isoDate(today.getFullYear(), today.getMonth() + 1, today.getDate());
 

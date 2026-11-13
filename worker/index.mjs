@@ -30,6 +30,22 @@ export default {
 
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors(origin) });
     if (url.pathname === '/health') return json({ ok: true }, 200, origin);
+
+    // elenco per lo scraper: solo agenzie autorizzate, attive e con configurazione verificata
+    if (url.pathname === '/sources' && request.method === 'GET') {
+      const auth = request.headers.get('Authorization') || '';
+      if (!env.SOURCES_TOKEN || auth !== `Bearer ${env.SOURCES_TOKEN}`) return json({ error: 'unauthorized' }, 401, origin);
+      const { results } = await env.DB.prepare(
+        `SELECT name, city, necrologi_url, scraper_config FROM agencies
+         WHERE active = 1 AND authorization_accepted_at IS NOT NULL`
+      ).all();
+      return json({
+        agencies: results.map((r) => ({
+          name: r.name, city: r.city, url: r.necrologi_url,
+          ...(r.scraper_config ? JSON.parse(r.scraper_config) : {}),
+        })),
+      }, 200, origin);
+    }
     if (url.pathname !== '/register' || request.method !== 'POST') return json({ error: 'not found' }, 404, origin);
 
     let body;
