@@ -1,8 +1,17 @@
 {
   "meta": {
-    "updatedAt": null,
-    "cities": [],
-    "agencies": []
+    "updatedAt": "2026-11-13T20:20:07.811Z",
+    "cities": [
+      "Esempio City"
+    ],
+    "agencies": [
+      {
+        "agency": "Agenzia Esempio",
+        "city": "Esempio City",
+        "ok": false,
+        "error": "fetch failed"
+      }
+    ]
   },
   "items": []
 }
