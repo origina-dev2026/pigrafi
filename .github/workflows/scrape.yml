@@ -2,7 +2,6 @@ name: Aggiornamento pigrafi
 
 on:
   schedule:
-    # 23:00 UTC = mezzanotte in Italia (ora solare). In estate è 01:00 locali.
     # 03:00 UTC = 04:00 in Italia (ora solare); in estate sono le 05:00
     - cron: '0 3 * * *'
   workflow_dispatch:

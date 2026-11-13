@@ -364,7 +364,7 @@ async function scrapeAgency(agency, todayIso, byId) {
 // Agenzie registrate dal form (Worker). Entrano nello scraper solo se hanno una configurazione verificata.
 export function mergeSources(fixed, registered) {
   const urls = new Set(fixed.map((a) => a.url));
-  const extra = (registered || []).filter((a) => a && a.url && a.item && !urls.has(a.url));
+  const extra = (registered || []).filter((a) => a && a.url && (a.item || a.mode === 'auto') && !urls.has(a.url));
   return [...fixed, ...extra];
 }
 

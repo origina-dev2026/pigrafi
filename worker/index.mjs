@@ -41,7 +41,7 @@ export default {
       ).all();
       return json({
         agencies: results.map((r) => ({
-          name: r.name, city: r.city, url: r.necrologi_url,
+          name: r.name, city: r.city, url: r.necrologi_url, mode: 'auto',
           ...(r.scraper_config ? JSON.parse(r.scraper_config) : {}),
         })),
       }, 200, origin);
