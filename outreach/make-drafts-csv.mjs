@@ -12,8 +12,8 @@ const [, , csvPath, outDir] = process.argv;
 if (!csvPath || !outDir) { console.error('Uso: node outreach/make-drafts-csv.mjs <csv> <cartella>'); process.exit(1); }
 
 const FORM_URL = 'https://pigrafi.majime.it/agenzie.html';
-const SENDER = 'segreteria@majime.it';
-const SIGNATURE = 'Segreteria Pigrafi\nsegreteria@majime.it';
+const SENDER = 'collaborazioni@majime.it';
+const SIGNATURE = 'Collaborazioni Pigrafi\ncollaborazioni@majime.it';
 
 const cap = (s) => s.replace(/(^|\s|-)(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
 const cityName = (slug) => cap(slug.replace(/-[a-z]{2}$/, '').replace(/-/g, ' '));

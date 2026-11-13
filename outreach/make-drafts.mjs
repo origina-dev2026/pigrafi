@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const FORM_URL = 'https://pigrafi.majime.it/agenzie.html';
-const SENDER = 'segreteria@majime.it';
-const SIGNATURE = 'Segreteria Pigrafi\nsegreteria@majime.it';
+const SENDER = 'collaborazioni@majime.it';
+const SIGNATURE = 'Collaborazioni Pigrafi\ncollaborazioni@majime.it';
 
 // CSV semplice (nessuna virgola dentro i campi)
 export function parseCsv(text) {
@@ -31,18 +31,23 @@ export function asString(s) {
 }
 
 export function buildAppleScript(drafts) {
-  const out = ['-- Bozze Pigrafi: NON invia nulla, crea le bozze in Mail.', 'tell application "Mail"'];
+  // ogni bozza è in un blocco try: un errore su una non blocca le altre
+  const out = ['-- Bozze Pigrafi: NON invia nulla, crea le bozze in Mail.', 'set nOk to 0', 'set nErr to 0', 'tell application "Mail"'];
   for (const d of drafts) {
     out.push(
-      '  set m to make new outgoing message with properties {visible:true, subject:' + asString(d.subject) +
+      '  try',
+      '    set m to make new outgoing message with properties {visible:false, sender:"collaborazioni@majime.it", subject:' + asString(d.subject) +
       ', content:' + asString(d.body) + '}',
-      '  tell m',
-      '    make new to recipient at end of to recipients with properties {address:"' + d.to + '"}',
-      '  end tell',
-      '  -- la bozza resta in Mail, da inviare a mano',
+      '    tell m',
+      '      make new to recipient at end of to recipients with properties {address:"' + d.to + '"}',
+      '    end tell',
+      '    set nOk to nOk + 1',
+      '  on error errMsg',
+      '    set nErr to nErr + 1',
+      '  end try',
     );
   }
-  out.push('end tell');
+  out.push('end tell', 'return "Bozze create: " & nOk & ", errori: " & nErr');
   return out.join('\n') + '\n';
 }
 
