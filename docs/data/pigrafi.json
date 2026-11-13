@@ -1,17 +1,310 @@
 {
   "meta": {
-    "updatedAt": "2026-11-13T20:20:07.811Z",
+    "updatedAt": "2026-11-13T20:30:18.010Z",
     "cities": [
-      "Esempio City"
+      "Asti",
+      "Collegno",
+      "Pinerolo",
+      "Rivoli",
+      "Torino"
     ],
     "agencies": [
       {
-        "agency": "Agenzia Esempio",
-        "city": "Esempio City",
-        "ok": false,
-        "error": "fetch failed"
+        "agency": "Athena Onoranze Funebri",
+        "city": "Torino",
+        "ok": true,
+        "count": 24
       }
     ]
   },
-  "items": []
+  "items": [
+    {
+      "id": "bb17aee6ee0dcc32",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "PECORIELLO MARIA LUCIA",
+      "date": "2026-10-28",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/pecoriello-maria-lucia.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/3e57e7788edd8fffc4ee77dcbac6aca103b1bf09.webp"
+    },
+    {
+      "id": "6d5b31b9046f649d",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "PALA GRAZIETTA",
+      "date": "2026-10-29",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/pala-grazietta.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/d456d08548af13bc770b27bad45aaf13b5f447db.webp"
+    },
+    {
+      "id": "11fc055eac170bb4",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "COGHE SERGIO",
+      "date": "2026-10-30",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/coghe-sergio.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/d0c58192850b6a3dcf750543ac528bbf16c1ffb0.webp"
+    },
+    {
+      "id": "9105f1420eacbec9",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "POLITI ITALIA",
+      "date": "2026-10-31",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/politi-italia.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/fcee470f1d1705b72dd4ce424e6f5f76278530c5.webp"
+    },
+    {
+      "id": "28861eac1a3430d4",
+      "city": "Pinerolo",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "MOGNI ANNA MARIA ASSUNTA",
+      "date": "2026-11-01",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/mogni-anna-maria-assunta.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/13ac5858b4a18be7882264ab6e0780ce40aa7d6a.webp"
+    },
+    {
+      "id": "26805d17f06d3227",
+      "city": "Asti",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "STRAVALLI MARIA",
+      "date": "2026-11-01",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/stravalli-maria.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/efa2022fd8fd1eb15dd11cb691e4978195702efb.webp"
+    },
+    {
+      "id": "00d28a920344bae7",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "BETTERO ROBERTO",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/bettero-roberto.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/e382521ad85d91e8c5308382ef30c82e8440e5d0.webp"
+    },
+    {
+      "id": "a16833fbf85f5220",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "GIORDANO MARIA",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/giordano-maria.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/b24cf9f1eb333436438c5ad5cdcd15944cc6c860.webp"
+    },
+    {
+      "id": "12407f6dd0a58d1f",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "ANDOLFO CARMELO",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/andolfo-carmelo.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/f59c859aa3cc1cb8eeeef0eb7d46fe762429adf8.webp"
+    },
+    {
+      "id": "bcd0ac3904966f9d",
+      "city": "Collegno",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "FALCONE GIULIA",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/falcone-giulia.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/075254449e98a23351d688160ece73189b265cc8.webp"
+    },
+    {
+      "id": "2dc3ea11d52f80c6",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "COSA MARIA GIUSEPPINA",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/cosa-maria-giuseppina.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/574e4821cf30f0a86e92d29a1fd98283d8086e0b.webp"
+    },
+    {
+      "id": "cd3fa60af7097ddd",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "BATTISTI RITA ANDREINA",
+      "date": "2026-11-02",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/battisti-rita-andreina.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/72a2f947410ee116154979e4cd6aae580f2a5851.webp"
+    },
+    {
+      "id": "7ddd0103e1a37ce7",
+      "city": "Pinerolo",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "LARATRO MATTEO",
+      "date": "2026-11-04",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/laratro-matteo.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/d779f1e0ab9ff41d5b30235b848966a5cef2e1e1.webp"
+    },
+    {
+      "id": "2963ecc883d97844",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "ANFI GIOVANNI",
+      "date": "2026-11-04",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/anfi-giovanni.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/5b6b01eb7fffa4b05c25420d41296694531432ac.webp"
+    },
+    {
+      "id": "1514ab20e4fc79e6",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "ERBI' ERALDO",
+      "date": "2026-11-05",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/erbi-eraldo.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/08af602f113557f858bca20854f068004a0301e5.webp"
+    },
+    {
+      "id": "cbc268b28d6cf0ba",
+      "city": "Rivoli",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "GRECO CINZIA",
+      "date": "2026-11-06",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/greco-cinzia.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/94c19d0ec8d6d57adad684b0aaae5a5c3eb27ef6.webp"
+    },
+    {
+      "id": "f4e68fb8670af7c1",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "PINTO VITA MARIA",
+      "date": "2026-11-07",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/pinto-vita-maria.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/38e40e45f36350eec259040b5f9d562cdc64ae54.webp"
+    },
+    {
+      "id": "3bcc01766c5e26e1",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "CORVINO VITTORIO",
+      "date": "2026-11-07",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/corvino-vittorio.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/308e87803e59bd99790993a8d25aaf03a98511d9.webp"
+    },
+    {
+      "id": "f05b89dfc4a95975",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "SCHIRRU PAOLO",
+      "date": "2026-11-07",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/schirru-paolo.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/9a65ff14479567e9d362eec111baef16404e94e9.webp"
+    },
+    {
+      "id": "7aedebea52a001b3",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "UBERTIS SILVANA",
+      "date": "2026-11-08",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/ubertis-silvana.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/7215c116fadc4fa18274ceeeb2c020480ef61e02.webp"
+    },
+    {
+      "id": "fb5aa13245d14f25",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "STIZZOLI ADELINA",
+      "date": "2026-11-08",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/stizzoli-adelina.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/e6792d7c6bb95fa41070cf7403b06a9364b10960.webp"
+    },
+    {
+      "id": "3796779d9a4df69f",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "GAINO REMO SECONDO",
+      "date": "2026-11-08",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/gaino-remo-secondo.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/9a86d1feb17157abdb601db21ac7328fbf439ef2.webp"
+    },
+    {
+      "id": "49a537f11b56c436",
+      "city": "Torino",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "GALLUZZO IMMACOLATA",
+      "date": "2026-11-10",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/galluzzo-immacolata.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/c0f2275e4f057911d18754da6164a86bbc880439.webp"
+    },
+    {
+      "id": "e0527f27f4b3d522",
+      "city": "Collegno",
+      "agency": "Athena Onoranze Funebri",
+      "agencyUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "surname": "BERGAMINI LINA",
+      "date": "2026-11-11",
+      "imageUrl": "https://athenaonoranzefunebri.com/uploads/necrologi/bergamini-lina.webp",
+      "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/8ed2f21eaa37340b49d7d9ad407d769c2ae516f0.webp"
+    }
+  ]
 }

@@ -85,9 +85,13 @@ async function scrapeAgency(agency, todayIso) {
       ? $el.find(agency.surname).first().text().trim()
       : ($img.attr('alt') || '').trim();
     const text = $el.text().replace(/\s+/g, ' ').trim();
+    // città: dalla scheda se l'agenzia copre più comuni (citySelector), altrimenti quella fissa
+    const cityFromCard = agency.citySelector
+      ? $el.find(agency.citySelector).first().contents().first().text().trim()
+      : '';
     items.push({
       id: sha(agency.url + imgUrl).slice(0, 16),
-      city: agency.city,
+      city: cityFromCard || agency.city,
       agency: agency.name,
       agencyUrl: agency.url,
       surname: surname.toUpperCase(),
@@ -142,7 +146,8 @@ async function main() {
     if (!used.has(f)) await unlink(path.join(IMG_DIR, f));
   }
 
-  const cities = [...new Set(config.agencies.map((a) => a.city))].sort();
+  const cities = [...new Set([...config.agencies.map((a) => a.city), ...items.map((i) => i.city)])]
+    .filter(Boolean).sort();
   const out = {
     meta: { updatedAt: new Date().toISOString(), cities, agencies: report },
     items

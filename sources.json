@@ -1,13 +1,14 @@
 {
-  "_comment": "Una voce per ogni pagina 'pigrafi' di ogni agenzia. 'item' = selettore CSS di ogni scheda; 'image' = immagine dentro la scheda; 'surname' = testo del cognome (opzionale, altrimenti si usa alt/testo dell'immagine). Sostituisci gli esempi con le agenzie reali.",
+  "_comment": "Agenzie verificate (struttura HTML controllata). 'item' = scheda; 'image' = foto/manifesto; 'surname' = nome del defunto; 'citySelector' = comune letto dalla scheda (copre più comuni). Da aggiungere: Fabozzi (Roma), AROF (Perugia), Bossi Casa del Saluto, Onoranze Ottani (Bologna) dopo verifica dei selettori.",
   "agencies": [
     {
-      "city": "Esempio City",
-      "name": "Agenzia Esempio",
-      "url": "https://www.esempio-agenzia.it/pigrafi",
-      "item": ".pigrafe",
+      "city": "Torino",
+      "name": "Athena Onoranze Funebri",
+      "url": "https://athenaonoranzefunebri.com/necrologi/",
+      "item": "article.ncard",
       "image": "img",
-      "surname": ".cognome"
+      "surname": "h2.ncard-name",
+      "citySelector": ".ncard-comune"
     }
   ]
 }
