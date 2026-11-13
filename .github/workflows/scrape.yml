@@ -3,7 +3,8 @@ name: Aggiornamento pigrafi
 on:
   schedule:
     # 23:00 UTC = mezzanotte in Italia (ora solare). In estate è 01:00 locali.
-    - cron: '0 23 * * *'
+    # 03:00 UTC = 04:00 in Italia (ora solare); in estate sono le 05:00
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scraper/scrape.mjs
+        env:
+          SOURCES_URL: ${{ secrets.SOURCES_URL }}
+          SOURCES_TOKEN: ${{ secrets.SOURCES_TOKEN }}
       - name: Salva i dati aggiornati
         run: |
           git config user.name "pigrafi-bot"
