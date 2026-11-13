@@ -1,30 +1,4 @@
 {
-  "_comment": "Fonti verificate. 'mode': 'carousel' = slider WordPress (immagine in background-image). 'ocr': true = legge il manifesto per trovare luogo delle esequie, data e tipo (funerale/anniversario). 'citySelector' = comune letto dalla scheda. Altre agenzie: aggiungere dopo verifica dei selettori. Fabozzi (Roma) esclusa: blocca il nostro user-agent dello scraper.",
-  "agencies": [
-    {
-      "city": "Mirano",
-      "name": "Onoranze Funebri Celegon",
-      "url": "https://www.celegon.net/chi-ci-ha-lasciato-anniversari-mirano/",
-      "mode": "carousel",
-      "item": ".sow-carousel-item",
-      "ocr": true
-    },
-    {
-      "city": "Torino",
-      "name": "Athena Onoranze Funebri",
-      "url": "https://athenaonoranzefunebri.com/necrologi/",
-      "item": "article.ncard",
-      "image": "img",
-      "surname": "h2.ncard-name",
-      "citySelector": ".ncard-comune"
-    },
-    {
-      "city": "Mestre",
-      "name": "Lucarda Imprese Funebri",
-      "url": "https://servizilucarda.com/necrologi/",
-      "mode": "sveltekit",
-      "imageKey": "immagineNecrologioUrl",
-      "ocr": true
-    }
-  ]
+  "_comment": "Nessuna fonte attiva. Le fonti precedenti (Celegon, Athena, Lucarda) sono nella cronologia git.",
+  "agencies": []
 }

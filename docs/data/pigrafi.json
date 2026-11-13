@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": "2026-11-13T22:50:58.388Z",
+    "updatedAt": "2026-11-13T22:54:08.534Z",
     "cities": [
       "Asti",
       "Collegno",
@@ -13,26 +13,7 @@
       "Rivoli",
       "Torino"
     ],
-    "agencies": [
-      {
-        "agency": "Onoranze Funebri Celegon",
-        "city": "Mirano",
-        "ok": true,
-        "count": 20
-      },
-      {
-        "agency": "Athena Onoranze Funebri",
-        "city": "Torino",
-        "ok": true,
-        "count": 24
-      },
-      {
-        "agency": "Lucarda Imprese Funebri",
-        "city": "Mestre",
-        "ok": true,
-        "count": 9
-      }
-    ]
+    "agencies": []
   },
   "items": [
     {
