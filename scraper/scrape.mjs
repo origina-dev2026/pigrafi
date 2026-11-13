@@ -110,7 +110,18 @@ async function downloadImage(url) {
   const name = sha(url);
   const existing = (await readdirSafe()).find((f) => f.startsWith(name));
   if (existing) return `data/images/${existing}`;
-  const res = await fetch(url, { headers: { 'User-Agent': UA } });
+  // rete instabile: fino a 3 tentativi con pausa crescente, una pausa tra un'immagine e l'altra
+  let res = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      res = await fetch(url, { headers: { 'User-Agent': UA, 'Connection': 'close' } });
+      break;
+    } catch (err) {
+      if (attempt === 3) { console.error('  download fallito: ' + url); throw err; }
+      await sleep(1000 * attempt);
+    }
+  }
+  await sleep(300);
   if (!res.ok) throw new Error(`immagine HTTP ${res.status}: ${url}`);
   const type = res.headers.get('content-type') || '';
   const ext = type.includes('png') ? 'png' : type.includes('webp') ? 'webp' : type.includes('gif') ? 'gif' : type.includes('svg') ? 'svg' : 'jpg';
@@ -176,9 +187,12 @@ function extractItems($, agency, todayIso) {
     const src = pickImageSrc($img);
     const imgUrl = src && absoluteUrl(src, agency.url);
     if (!imgUrl) return;
-    const surname = agency.surname
-      ? $el.find(agency.surname).first().text().trim()
-      : ($img.attr('alt') || '').trim();
+    // nome: testo di un elemento, oppure un attributo (es. aria-label del link)
+    const surname = agency.surnameAttr
+      ? ($el.find(agency.surname).first().attr(agency.surnameAttr) || '').trim()
+      : agency.surname
+        ? $el.find(agency.surname).first().text().trim()
+        : ($img.attr('alt') || '').trim();
     const text = $el.text().replace(/\s+/g, ' ').trim();
     // città: dalla scheda se l'agenzia copre più comuni (citySelector), altrimenti quella fissa
     const cityFromCard = agency.citySelector
@@ -200,8 +214,24 @@ function extractItems($, agency, todayIso) {
   return items;
 }
 
+// pagina HTML con nuovi tentativi (la rete di alcuni siti chiude la connessione a metà)
+async function getText(url) {
+  let lastErr = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.text();
+    } catch (err) {
+      lastErr = err;
+      await sleep(1500 * attempt);
+    }
+  }
+  throw lastErr;
+}
+
 async function scrapeAgency(agency, todayIso, byId) {
-  const html = await (await fetch(agency.url, { headers: { 'User-Agent': UA } })).text();
+  const html = await getText(agency.url);
   const $ = cheerio.load(html);
   const items = extractItems($, agency, todayIso);
 
@@ -254,7 +284,7 @@ async function main() {
       console.log(`✔ ${agency.city} – ${agency.name}: ${found.length} pigrafi`);
     } catch (err) {
       report.push({ agency: agency.name, city: agency.city, ok: false, error: String(err.message || err) });
-      console.error(`✖ ${agency.name}: ${err.message}`);
+      console.error(`✖ ${agency.name}: ${err.message}${err.cause ? " (" + (err.cause.code || err.cause.message) + ")" : ""}`);
     }
     await sleep(1000);
   }

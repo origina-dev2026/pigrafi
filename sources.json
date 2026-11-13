@@ -1,5 +1,5 @@
 {
-  "_comment": "Fonti verificate. 'mode': 'carousel' = slider WordPress (immagine in background-image). 'ocr': true = legge il manifesto per trovare luogo delle esequie, data e tipo (funerale/anniversario). 'citySelector' = comune letto dalla scheda. Altre agenzie: aggiungere dopo verifica dei selettori.",
+  "_comment": "Fonti verificate. 'mode': 'carousel' = slider WordPress (immagine in background-image). 'ocr': true = legge il manifesto per trovare luogo delle esequie, data e tipo (funerale/anniversario). 'citySelector' = comune letto dalla scheda. Altre agenzie: aggiungere dopo verifica dei selettori. Fabozzi (Roma) esclusa: blocca il nostro user-agent dello scraper.",
   "agencies": [
     {
       "city": "Mirano",
