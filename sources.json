@@ -1,0 +1,13 @@
+{
+  "_comment": "Una voce per ogni pagina 'pigrafi' di ogni agenzia. 'item' = selettore CSS di ogni scheda; 'image' = immagine dentro la scheda; 'surname' = testo del cognome (opzionale, altrimenti si usa alt/testo dell'immagine). Sostituisci gli esempi con le agenzie reali.",
+  "agencies": [
+    {
+      "city": "Esempio City",
+      "name": "Agenzia Esempio",
+      "url": "https://www.esempio-agenzia.it/pigrafi",
+      "item": ".pigrafe",
+      "image": "img",
+      "surname": ".cognome"
+    }
+  ]
+}

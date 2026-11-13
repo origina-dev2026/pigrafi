@@ -1,0 +1,14 @@
+{
+  "name": "pigrafi-app",
+  "version": "1.0.0",
+  "description": "Pigrafi: scraper pigrafi funebri + app web",
+  "scripts": {
+    "scrape": "node scraper/scrape.mjs",
+    "test": "node --test scraper/parse.test.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "private": true
+}

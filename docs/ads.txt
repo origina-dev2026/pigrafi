@@ -1,0 +1,2 @@
+# Sostituisci con la riga fornita da Google AdSense (Account → Siti → ads.txt)
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2f3640">
+  <title>Pigrafi</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pigrafi</h1>
+    <div class="controls">
+      <label>
+        Città
+        <select id="city"></select>
+      </label>
+      <label>
+        Cognome del defunto
+        <input id="surname" type="search" placeholder="es. ROSSI" autocomplete="off">
+      </label>
+    </div>
+    <p id="status" class="status"></p>
+  </header>
+
+  <main id="list" aria-live="polite"></main>
+
+  <div id="consent" class="consent" hidden>
+    <p>Usiamo cookie per mostrare annunci pubblicitari (Google AdSense). Puoi accettare o rifiutare. <a href="privacy.html">Privacy</a></p>
+    <div class="consent-actions">
+      <button id="consent-reject" type="button">Rifiuta</button>
+      <button id="consent-accept" type="button">Accetta</button>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
