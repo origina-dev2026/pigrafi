@@ -149,6 +149,38 @@ export async function stopOcr() {
   if (ocrWorker) { await ocrWorker.terminate(); ocrWorker = null; }
 }
 
+// SvelteKit: i dati della pagina sono in /<pagina>/__data.json in formato "devalue" (indici nell'array piatto)
+export function decodeSvelteKit(json) {
+  const arr = json.nodes.filter(Boolean).find((n) => Array.isArray(n.data))?.data;
+  if (!arr) return null;
+  const memo = new Map();
+  const rv = (i) => {
+    if (typeof i !== 'number' || i < 0) return i;
+    if (memo.has(i)) return memo.get(i);
+    const v = arr[i];
+    if (v === null || typeof v !== 'object') { memo.set(i, v); return v; }
+    if (Array.isArray(v)) {
+      const out = []; memo.set(i, out);
+      for (const k of v) out.push(rv(k));
+      return out;
+    }
+    const out = {}; memo.set(i, out);
+    for (const [k, val] of Object.entries(v)) out[k] = rv(val);
+    return out;
+  };
+  return rv(0);
+}
+
+// trova ricorsivamente gli oggetti che hanno una chiave immagine (es. immagineNecrologioUrl)
+export function findRecords(node, key, out = []) {
+  if (Array.isArray(node)) { node.forEach((n) => findRecords(n, key, out)); }
+  else if (node && typeof node === 'object') {
+    if (key in node) out.push(node);
+    else Object.values(node).forEach((n) => findRecords(n, key, out));
+  }
+  return out;
+}
+
 // Estrae gli elementi dalla pagina, in base alla modalità dell'agenzia
 function extractItems($, agency, todayIso) {
   const items = [];
@@ -230,10 +262,40 @@ async function getText(url) {
   throw lastErr;
 }
 
+async function scrapeSvelteKit(agency, todayIso) {
+  const dataUrl = new URL('__data.json', agency.url).href;
+  const res = await fetch(dataUrl, { headers: { 'User-Agent': UA } });
+  if (!res.ok) throw new Error(`HTTP ${res.status} su ${dataUrl}`);
+  const root = decodeSvelteKit(await res.json());
+  const key = agency.imageKey || 'immagineNecrologioUrl';
+  const records = findRecords(root, key);
+  const items = [];
+  for (const r of records) {
+    const imgUrl = absoluteUrl(r[key], agency.url);
+    if (!imgUrl) continue;
+    const nome = String(r.nome || '').trim();
+    const cognome = String(r.cognome || '').trim();
+    items.push({
+      id: sha(agency.url + imgUrl).slice(0, 16),
+      city: agency.city,
+      agency: agency.name,
+      agencyUrl: agency.url,
+      surname: cognome.toUpperCase(),
+      title: `${nome} ${cognome}`.trim(),
+      type: classifyType(nome, cognome),
+      date: r.dataFunerale ? String(r.dataFunerale).slice(0, 10) : null,
+      imageUrl: imgUrl,
+      sourceUrl: r.slug ? new URL(r.slug, agency.url).href : agency.url,
+      lastSeen: todayIso
+    });
+  }
+  return items;
+}
+
 async function scrapeAgency(agency, todayIso, byId) {
-  const html = await getText(agency.url);
-  const $ = cheerio.load(html);
-  const items = extractItems($, agency, todayIso);
+  const items = agency.mode === 'sveltekit'
+    ? await scrapeSvelteKit(agency, todayIso)
+    : extractItems(cheerio.load(await getText(agency.url)), agency, todayIso);
 
   for (const it of items) {
     // scarica le immagini in locale (l'app non dipende dai server delle agenzie)

@@ -52,3 +52,14 @@ test('data evento: funerale, non data del decesso', () => {
 test('data evento: solo data del decesso -> null se marcata come decesso', () => {
   assert.equal(parseEventDate('Il giorno 10 Novembre 2026 è mancato'), null);
 });
+
+import { decodeSvelteKit, findRecords } from './scrape.mjs';
+
+test('SvelteKit devalue: decodifica elenco defunti', () => {
+  const json = { nodes: [null, null, { type: 'data', data: [{ defunti: 1 }, [2], { id: 3, nome: 4, immagineNecrologioUrl: 5 }, 1557, 'SILVANA', '/img/1'] }] };
+  const root = decodeSvelteKit(json);
+  const recs = findRecords(root, 'immagineNecrologioUrl');
+  assert.equal(recs.length, 1);
+  assert.equal(recs[0].nome, 'SILVANA');
+  assert.equal(recs[0].id, 1557);
+});

@@ -1,10 +1,12 @@
 {
   "meta": {
-    "updatedAt": "2026-11-13T20:58:51.652Z",
+    "updatedAt": "2026-11-13T21:02:48.252Z",
     "cities": [
       "Asti",
       "Collegno",
+      "Dolo",
       "Martellago",
+      "Mestre",
       "Mira",
       "Mirano",
       "Pinerolo",
@@ -23,6 +25,12 @@
         "city": "Torino",
         "ok": true,
         "count": 24
+      },
+      {
+        "agency": "Lucarda Imprese Funebri",
+        "city": "Mestre",
+        "ok": true,
+        "count": 9
       }
     ]
   },
@@ -551,6 +559,22 @@
       "image": "data/images/c0f2275e4f057911d18754da6164a86bbc880439.webp"
     },
     {
+      "id": "6b4e0bec724ffdde",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "CALLEGARO VED. CANELLA",
+      "title": "GIOVANNA CALLEGARO VED. CANELLA",
+      "type": "funerale",
+      "date": "2026-11-10",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1551/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/giovanna-callegaro-ved-canella",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/b0fc3ed9e4461c699773f1e41fb4e07cdc17cd5c.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
       "id": "e0527f27f4b3d522",
       "city": "Collegno",
       "agency": "Athena Onoranze Funebri",
@@ -562,6 +586,22 @@
       "sourceUrl": "https://athenaonoranzefunebri.com/necrologi/",
       "lastSeen": "2026-11-13",
       "image": "data/images/8ed2f21eaa37340b49d7d9ad407d769c2ae516f0.webp"
+    },
+    {
+      "id": "09f1a25262fda680",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "BOBBO",
+      "title": "GIACOMO BOBBO",
+      "type": "funerale",
+      "date": "2026-11-14",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1550/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/giacomo-bobbo",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/6333ea9c31b0052e9cc75e9c7ba6a9aad220339b.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
     },
     {
       "id": "b305fbe9ee58351e",
@@ -578,6 +618,38 @@
       "image": "data/images/aa749c686d6cbfd82d244e41e7698206aa31ae4e.jpg",
       "ocrDone": true,
       "place": "Mirano"
+    },
+    {
+      "id": "8e3d7cf6712d7bec",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "MARCASSA",
+      "title": "SILVANO MARCASSA",
+      "type": "funerale",
+      "date": "2026-11-16",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1552/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/silvano-marcassa",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/dd92e086b04d13b52d3f0d6e11f4c7fa0d0ea5b1.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
+      "id": "8790b4eefd0f89a7",
+      "city": "Dolo",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "MARSON VED. BARISON",
+      "title": "CELESTE MARSON VED. BARISON",
+      "type": "funerale",
+      "date": "2026-11-16",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1549/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/celeste-marson-ved-barison",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/a42f145d9b239cdd00e1cd73d18b61107abad02d.jpg",
+      "ocrDone": true,
+      "place": "Dolo"
     },
     {
       "id": "858eadfc4c216036",
@@ -612,6 +684,22 @@
       "place": "Mirano"
     },
     {
+      "id": "1fb53c2f5b984256",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "DELL'ISOLA",
+      "title": "LUIGI DELL'ISOLA",
+      "type": "funerale",
+      "date": "2026-11-17",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1553/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/luigi-dellisola",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/6b1e969aba349979031dc8da504dd2e9b64d5694.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
       "id": "64d74a82ba544d52",
       "city": "Mirano",
       "agency": "Onoranze Funebri Celegon",
@@ -628,6 +716,54 @@
       "place": "Mirano"
     },
     {
+      "id": "c27404e4c605f062",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "BOBBO VED. ZUCCHINI",
+      "title": "ANNAMARIA BOBBO VED. ZUCCHINI",
+      "type": "funerale",
+      "date": "2026-11-18",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1556/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/annamaria--bobbo-ved-zucchini",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/3e2d3a8ea0416820065e7db40eba819523574706.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
+      "id": "f97ccdc374806cf0",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "BAREATO",
+      "title": "GIORGIO BAREATO",
+      "type": "funerale",
+      "date": "2026-11-18",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1555/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/giorgio-bareato",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/bb2fe1fe7672a3a4b42005d72e7e120cc22dce84.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
+      "id": "ff2cd1751427d718",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "MARCOLLA",
+      "title": "GIORGIO MARCOLLA",
+      "type": "funerale",
+      "date": "2026-11-18",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1554/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/giorgio-marcolla",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/d8f749029959c26c64f709b963f5c1c5b2db8069.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
+    },
+    {
       "id": "2d696b652dbb1b90",
       "city": "Mirano",
       "agency": "Onoranze Funebri Celegon",
@@ -642,6 +778,22 @@
       "image": "data/images/1a01a806c496cf95903be246e59dd86fc5a7e131.jpg",
       "ocrDone": true,
       "place": "Mirano"
+    },
+    {
+      "id": "e220e0af81c4580a",
+      "city": "Mestre",
+      "agency": "Lucarda Imprese Funebri",
+      "agencyUrl": "https://servizilucarda.com/necrologi/",
+      "surname": "BURANELLO IN RIGOTTO",
+      "title": "SILVANA BURANELLO IN RIGOTTO",
+      "type": "funerale",
+      "date": "2026-11-19",
+      "imageUrl": "https://servizilucarda.com/area-riservata/api/defunto/1557/image/immagineNecrologio",
+      "sourceUrl": "https://servizilucarda.com/necrologi/silvana-buranello-in-rigotto",
+      "lastSeen": "2026-11-13",
+      "image": "data/images/8e53c00b0c6aa00fc7d25459ca4481c91ac86c3c.jpg",
+      "ocrDone": true,
+      "place": "Mestre"
     },
     {
       "id": "0553c855583b0921",

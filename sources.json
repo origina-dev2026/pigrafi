@@ -17,6 +17,14 @@
       "image": "img",
       "surname": "h2.ncard-name",
       "citySelector": ".ncard-comune"
+    },
+    {
+      "city": "Mestre",
+      "name": "Lucarda Imprese Funebri",
+      "url": "https://servizilucarda.com/necrologi/",
+      "mode": "sveltekit",
+      "imageKey": "immagineNecrologioUrl",
+      "ocr": true
     }
   ]
 }
