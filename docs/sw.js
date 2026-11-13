@@ -1,4 +1,4 @@
-const CACHE = 'pigrafi-v1';
+const CACHE = 'pigrafi-v2';
 const SHELL = ['./', 'index.html', 'app.js', 'style.css', 'manifest.webmanifest', 'icon.svg'];
 
 self.addEventListener('install', (e) => {

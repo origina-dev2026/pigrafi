@@ -16,3 +16,39 @@ test('nessuna data', () => {
   assert.equal(parseDate('Nessuna data qui'), null);
   assert.equal(parseDate(''), null);
 });
+
+import { parsePlace, classifyType, fullSizeUrl } from './scrape.mjs';
+
+test('luogo esequie: chiesa di Mirano', () => {
+  const t = "Martedì 17 Novembre 2026 alle ore 11,00 nella chiesa San Leopoldo Mandic' di Mirano. Dopo la cerimonia si proseguirà per il crematorio.";
+  assert.equal(parsePlace(t), 'Mirano');
+});
+
+test('luogo esequie: Mestre anche se l\'agenzia è di Mirano', () => {
+  assert.equal(parsePlace('I funerali avranno luogo nella chiesa di Santa Maria Assunta di Mestre alle 10'), 'Mestre');
+  assert.equal(parsePlace('esequie a Mestre, cimitero'), 'Mestre');
+});
+
+test('luogo non trovato', () => {
+  assert.equal(parsePlace('testo senza luoghi'), null);
+});
+
+test('tipo: anniversario vs funerale', () => {
+  assert.equal(classifyType('Tomaello Cristian 3° anniversario'), 'anniversario');
+  assert.equal(classifyType('Vescovo Vittorino', 'nella chiesa'), 'funerale');
+});
+
+test('immagine a dimensione piena', () => {
+  assert.equal(fullSizeUrl('https://x.it/wp-content/uploads/2026/11/Zara-Gabriella-217x307.jpg'), 'https://x.it/wp-content/uploads/2026/11/Zara-Gabriella.jpg');
+});
+
+import { parseEventDate } from './scrape.mjs';
+
+test('data evento: funerale, non data del decesso', () => {
+  const t = "Il giorno 10 Novembre 2026 amorevolmente assistito dai propri cari è mancato ... I funerali avranno luogo Martedì 17 Novembre 2026 alle ore 11,00 nella chiesa di Mirano";
+  assert.equal(parseEventDate(t), '2026-11-17');
+});
+
+test('data evento: solo data del decesso -> null se marcata come decesso', () => {
+  assert.equal(parseEventDate('Il giorno 10 Novembre 2026 è mancato'), null);
+});

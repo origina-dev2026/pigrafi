@@ -1,6 +1,14 @@
 {
-  "_comment": "Agenzie verificate (struttura HTML controllata). 'item' = scheda; 'image' = foto/manifesto; 'surname' = nome del defunto; 'citySelector' = comune letto dalla scheda (copre più comuni). Da aggiungere: Fabozzi (Roma), AROF (Perugia), Bossi Casa del Saluto, Onoranze Ottani (Bologna) dopo verifica dei selettori.",
+  "_comment": "Fonti verificate. 'mode': 'carousel' = slider WordPress (immagine in background-image). 'ocr': true = legge il manifesto per trovare luogo delle esequie, data e tipo (funerale/anniversario). 'citySelector' = comune letto dalla scheda. Altre agenzie: aggiungere dopo verifica dei selettori.",
   "agencies": [
+    {
+      "city": "Mirano",
+      "name": "Onoranze Funebri Celegon",
+      "url": "https://www.celegon.net/chi-ci-ha-lasciato-anniversari-mirano/",
+      "mode": "carousel",
+      "item": ".sow-carousel-item",
+      "ocr": true
+    },
     {
       "city": "Torino",
       "name": "Athena Onoranze Funebri",

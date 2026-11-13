@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2f3640">
-  <title>Pigrafi</title>
+  <meta name="theme-color" content="#1d2a3a">
+  <meta name="description" content="Manifesti funebri e anniversari delle agenzie, per città, con ricerca per cognome.">
+  <title>Pigrafi · manifesti funebri e anniversari</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
@@ -24,27 +25,44 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2414957329781059" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Pigrafi</h1>
-    <div class="controls">
-      <label>
-        Città
+  <header class="top">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="14" fill="#c9a66b"/><path d="M24 12c-5 0-8 3.5-8 8 0 6 8 16 8 16s8-10 8-16c0-4.5-3-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="#1d2a3a"/></svg>
+      <div>
+        <h1>Pigrafi</h1>
+        <p class="tagline">Manifesti funebri e anniversari</p>
+      </div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Tipo di manifesto">
+      <button role="tab" class="tab active" data-type="funerale" aria-selected="true">Funerali</button>
+      <button role="tab" class="tab" data-type="anniversario" aria-selected="false">Anniversari</button>
+    </nav>
+
+    <div class="filters">
+      <label class="field">
+        <span>Città</span>
         <select id="city"></select>
       </label>
-      <label>
-        Cognome del defunto
-        <input id="surname" type="search" placeholder="es. ROSSI" autocomplete="off">
+      <label class="field search">
+        <span>Cognome</span>
+        <input id="surname" type="search" placeholder="es. Rossi" autocomplete="off">
       </label>
     </div>
-    <p id="status" class="status"></p>
   </header>
 
+  <p id="summary" class="summary"></p>
   <main id="list" aria-live="polite"></main>
+
+  <footer class="foot">
+    <p id="status"></p>
+    <p><a href="privacy.html">Privacy e cookie</a></p>
+  </footer>
 
   <div id="consent" class="consent" hidden>
     <p>Usiamo cookie per mostrare annunci pubblicitari (Google AdSense). Puoi accettare o rifiutare. <a href="privacy.html">Privacy</a></p>
     <div class="consent-actions">
-      <button id="consent-reject" type="button">Rifiuta</button>
+      <button id="consent-reject" type="button" class="ghost">Rifiuta</button>
       <button id="consent-accept" type="button">Accetta</button>
     </div>
   </div>
