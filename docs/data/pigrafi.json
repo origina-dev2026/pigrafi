@@ -1,4 +1,8 @@
 {
-  "meta": { "updatedAt": null, "cities": [], "agencies": [] },
+  "meta": {
+    "updatedAt": "2026-11-13T22:10:51.098Z",
+    "cities": [],
+    "agencies": []
+  },
   "items": []
 }
