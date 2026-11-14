@@ -1,5 +1,6 @@
 // Worker Cloudflare: registrazione agenzie funebri -> D1 (database "pigrafi")
 import { validateRegistration } from './validate.mjs';
+import { sendConfirmation } from './confirmation.mjs';
 
 const AUTH_TEXT_VERSION = '2026-11-v1';
 const AUTH_TEXT = "Autorizzo Pigrafi a riprodurre nell'app e nel sito i manifesti funebri pubblicati dalla mia agenzia sulla pagina indicata, indicando la fonte (nome dell'agenzia e link alla pagina). Posso revocare l'autorizzazione in qualsiasi momento scrivendo a collaborazioni@majime.it.";
@@ -83,6 +84,7 @@ export default {
       }
       return json({ ok: false, errors: ['Errore interno, riprova più tardi'] }, 500, origin);
     }
+    try { await sendConfirmation(env, data); } catch { /* la registrazione resta valida */ }
     return json({ ok: true }, 201, origin);
   },
 };
