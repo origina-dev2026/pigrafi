@@ -4,7 +4,7 @@ import { validateRegistration } from './validate.mjs';
 
 const ok = {
   name: 'Agenzia Test', contact_name: 'Mario Rossi', email: 'Info@Test.it', city: 'Mirano',
-  necrologi_url: 'https://www.test.it/necrologi', authorization: true,
+  necrologi_url: "https://www.test.it/necrologi", authorization: true, privacy: true,
 };
 
 test('dati validi', () => {
@@ -21,4 +21,10 @@ test('autorizzazione obbligatoria', () => {
 
 test('url necrologi non valido', () => {
   assert.equal(validateRegistration({ ...ok, necrologi_url: 'javascript:alert(1)' }).ok, false);
+});
+
+test('privacy obbligatoria', () => {
+  const r = validateRegistration({ ...ok, privacy: false });
+  assert.equal(r.ok, false);
+  assert.match(r.errors.join(' '), /privacy/);
 });

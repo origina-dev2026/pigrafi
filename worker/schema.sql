@@ -18,3 +18,9 @@ CREATE TABLE IF NOT EXISTS agencies (
 -- Configurazione di acquisizione (selettori) impostata dall'amministratore dopo aver verificato la pagina
 ALTER TABLE agencies ADD COLUMN scraper_config TEXT;
 ALTER TABLE agencies ADD COLUMN active INTEGER NOT NULL DEFAULT 0;
+
+-- Prova del consenso: data della presa visione privacy e hash del testo accettato
+ALTER TABLE agencies ADD COLUMN privacy_accepted_at TEXT;
+ALTER TABLE agencies ADD COLUMN auth_text_sha256 TEXT;
+-- Testo dell'autorizzazione per versione (archivio)
+CREATE TABLE IF NOT EXISTS consent_texts (version TEXT PRIMARY KEY, text TEXT NOT NULL, sha256 TEXT NOT NULL, created_at TEXT NOT NULL);

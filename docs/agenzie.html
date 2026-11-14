@@ -61,6 +61,7 @@
       const fd = new FormData(form);
       const body = Object.fromEntries(fd.entries());
       body.authorization = fd.get('authorization') === 'on';
+      body.privacy = fd.get('privacy') === 'on';
       if (!body.authorization || fd.get('privacy') !== 'on') {
         show('Per continuare servono autorizzazione e presa visione della privacy.', false);
         return;

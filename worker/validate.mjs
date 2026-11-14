@@ -26,5 +26,6 @@ export function validateRegistration(input) {
   if (data.website && !isHttpUrl(data.website)) errors.push('Sito web non valido');
   if (data.anniversari_url && !isHttpUrl(data.anniversari_url)) errors.push('Link anniversari non valido');
   if (input?.authorization !== true) errors.push('Serve l’autorizzazione alla pubblicazione dei manifesti');
+  if (input?.privacy !== true) errors.push('Serve la presa visione della privacy policy');
   return { ok: errors.length === 0, errors, data };
 }
