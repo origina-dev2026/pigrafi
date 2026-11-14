@@ -34,3 +34,31 @@ export async function sendConfirmation(env, data) {
   });
   return { sent: res.ok, status: res.status };
 }
+
+// avviso interno: una email a collaborazioni@majime.it per ogni nuova registrazione
+export async function sendInternalNotice(env, data) {
+  if (!env.BREVO_API_KEY) return { sent: false, reason: 'BREVO_API_KEY non impostata' };
+  const text = [
+    'Nuova registrazione agenzia su Pigrafi',
+    '',
+    `Agenzia: ${data.name}`,
+    `Referente: ${data.contact_name}`,
+    `Email: ${data.email}`,
+    `Telefono: ${data.phone || '-'}`,
+    `Città: ${data.city}`,
+    `Sito: ${data.website || '-'}`,
+    `Pagina necrologi: ${data.necrologi_url}`,
+    `Pagina anniversari: ${data.anniversari_url || '-'}`,
+  ].join('\n');
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': env.BREVO_API_KEY, 'Content-Type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({
+      sender: { name: 'Pigrafi', email: 'collaborazioni@majime.it' },
+      to: [{ email: 'collaborazioni@majime.it' }],
+      subject: `Nuova registrazione: ${data.name} (${data.city})`,
+      textContent: text,
+    }),
+  });
+  return { sent: res.ok, status: res.status };
+}
